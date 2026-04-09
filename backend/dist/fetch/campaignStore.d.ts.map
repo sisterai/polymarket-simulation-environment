@@ -1,0 +1,1 @@
+{"version":3,"file":"campaignStore.d.ts","sourceRoot":"","sources":["../../src/fetch/campaignStore.ts"],"names":[],"mappings":"AAGA,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,yBAAyB,CAAC;AAE/D,wBAAgB,gBAAgB,CAAC,OAAO,EAAE,MAAM,EAAE,WAAW,EAAE,MAAM,EAAE,OAAO,EAAE,MAAM,UAErF;AAED,wBAAsB,oBAAoB,CAAC,OAAO,EAAE,MAAM,EAAE,WAAW,EAAE,MAAM,EAAE,OAAO,EAAE,MAAM,EAAE,OAAO,EAAE,eAAe,iBAYzH"}

@@ -1,0 +1,17 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Wrapper scripts to run the backend-served dashboard.",
+  "scripts": {
+    "install:backend": "npm --prefix ..\\\\backend install",
+    "dev": "npm --prefix ..\\\\backend run dev",
+    "build": "npm --prefix ..\\\\backend run build",
+    "start": "npm --prefix ..\\\\backend run start",
+    "fetch:last": "npm --prefix ..\\\\backend run fetch:last",
+    "backtest:last": "npm --prefix ..\\\\backend run backtest:last",
+    "collect:live": "npm --prefix ..\\\\backend run collect:live",
+    "download:range": "npm --prefix ..\\\\backend run download:range"
+  }
+}
+

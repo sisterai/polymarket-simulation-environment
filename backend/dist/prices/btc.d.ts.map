@@ -1,0 +1,1 @@
+{"version":3,"file":"btc.d.ts","sourceRoot":"","sources":["../../src/prices/btc.ts"],"names":[],"mappings":"AAeA,qBAAa,cAAc;IACb,OAAO,CAAC,QAAQ,CAAC,OAAO;gBAAP,OAAO,SAAsC;YAE5D,sBAAsB;IA+B9B,cAAc,CAAC,MAAM,EAAE;QAAE,OAAO,EAAE,MAAM,CAAC;QAAC,KAAK,EAAE,MAAM,CAAA;KAAE,GAAG,OAAO,CAAC,CAAC,MAAM,EAAE,MAAM,CAAC,EAAE,CAAC;CAwB9F"}

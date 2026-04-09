@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polymarket 5m Bot Simulator</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div>
+          <div class="title">Polymarket BTC 5m UP/DOWN Simulator</div>
+          <div class="subtitle">Download campaigns → run backtests → inspect fills + PnL</div>
+        </div>
+        <div class="right">
+          <div class="pill"><span class="dot ok"></span><span>Server</span><span class="muted">localhost:3001</span></div>
+          <button id="refresh">Refresh</button>
+        </div>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <div class="cardTitle">1) Discover markets</div>
+          <div class="row">
+            <button id="discover" class="primary">Discover</button>
+            <div class="muted">Uses Gamma search (configurable in backend env).</div>
+          </div>
+          <pre id="markets" class="pre"></pre>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">2) Download a 5-minute campaign to CSV</div>
+          <div class="row">
+            <label>ConditionId <input id="dlConditionId" placeholder="0x..." /></label>
+          </div>
+          <div class="row">
+            <label>Start (ms) <input id="dlStartMs" placeholder="e.g. 1760470000000" /></label>
+            <button id="download" class="primary">Download (300s)</button>
+          </div>
+          <div class="muted">
+            Tip: startMs is the campaign start timestamp. Polymarket runs many campaigns; you can paste the start time from
+            your own dataset or align to market schedule.
+          </div>
+          <pre id="downloadStatus" class="pre"></pre>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">3) Saved campaigns</div>
+          <div class="row">
+            <button id="loadCampaigns" class="primary">Load campaigns</button>
+          </div>
+          <div class="row">
+            <label>ConditionId filter <input id="campaignConditionFilter" placeholder="optional" /></label>
+          </div>
+          <div id="campaignList" class="list"></div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <div class="cardTitle">Backtest</div>
+          <div class="row">
+            <label>Saved campaign
+              <select id="btCampaignSelect"></select>
+            </label>
+            <label>Search
+              <input id="btCampaignSearch" placeholder="type to filter (conditionId)" />
+            </label>
+            <div class="muted" id="btCampaignCount"></div>
+          </div>
+          <div class="row">
+            <label>ConditionId <input id="btConditionId" /></label>
+            <label>Start (ms) <input id="btStartMs" /></label>
+          </div>
+          <div class="row">
+            <label>Bot
+              <select id="btBot">
+              </select>
+            </label>
+            <label>Initial cash <input id="btCash" value="1000" /></label>
+            <label>Fee rate <input id="btFee" value="0" /></label>
+            <label>Slippage (bps) <input id="btSlip" value="0" /></label>
+          </div>
+          <div class="row">
+            <button id="backtest" class="primary">Run backtest</button>
+            <button type="button" id="openCampaignDetails" class="linkBtn">Open campaign page</button>
+          </div>
+          <pre id="btSummary" class="pre"></pre>
+        </div>
+
+        <div class="card wide">
+          <div class="cardTitle">Charts</div>
+          <div class="charts">
+            <canvas id="chartUpDown"></canvas>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campaign • Polymarket Simulator</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div>
+          <div class="title">Campaign</div>
+          <div class="subtitle" id="campSubtitle"></div>
+        </div>
+        <div class="right">
+          <a class="linkBtn" href="/">← Back</a>
+          <button id="reload">Reload</button>
+        </div>
+      </header>
+
+      <section class="grid grid-full">
+        <div class="card hero">
+          <div class="cardTitle">Campaign status</div>
+          <pre id="campStatus" class="pre"></pre>
+        </div>
+
+        <div class="card hero">
+          <div class="cardTitle">Final result (after backtest)</div>
+          <div class="kpis">
+            <div class="kpi">
+              <div class="k">Total PnL (USD)</div>
+              <div class="v" id="kpiPnl">—</div>
+            </div>
+            <div class="kpi">
+              <div class="k">Final equity (USD)</div>
+              <div class="v" id="kpiEquity">—</div>
+            </div>
+            <div class="kpi">
+              <div class="k">Final cash (USD)</div>
+              <div class="v" id="kpiCash">—</div>
+            </div>
+            <div class="kpi">
+              <div class="k">UP shares</div>
+              <div class="v" id="kpiUp">—</div>
+            </div>
+            <div class="kpi">
+              <div class="k">DOWN shares</div>
+              <div class="v" id="kpiDown">—</div>
+            </div>
+            <div class="kpi">
+              <div class="k">Trades</div>
+              <div class="v" id="kpiTrades">—</div>
+            </div>
+            <div class="kpi">
+              <div class="k">Fees (USD)</div>
+              <div class="v" id="kpiFees">—</div>
+            </div>
+          </div>
+          <div class="muted" id="finalHint">Run a backtest to populate this.</div>
+        </div>
+      </section>
+
+      <section class="grid grid-campaign">
+        <div class="card wide">
+          <div class="cardTitle">Charts</div>
+          <div class="charts">
+            <canvas id="chartUpDown"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">Backtest</div>
+          <div class="row">
+            <label>Bot <select id="bot"></select></label>
+            <label>Initial cash <input id="cash" value="1000" /></label>
+            <label>Fee rate <input id="fee" value="0" /></label>
+            <label>Slippage (bps) <input id="slip" value="0" /></label>
+          </div>
+          <div class="row">
+            <button id="run">Run backtest</button>
+          </div>
+          <pre id="summary" class="pre"></pre>
+        </div>
+
+        <div class="card wide">
+          <div class="cardTitle">Trading logs</div>
+          <div class="muted">
+            Shows bot fills returned by the backtest. “MTM” (mark-to-market) uses the campaign mark at that second to value the position.
+          </div>
+          <div class="tableWrap">
+            <table class="table" id="fillsTable">
+              <thead>
+                <tr>
+                  <th>t</th>
+                  <th>side</th>
+                  <th>outcome</th>
+                  <th>shares</th>
+                  <th>price</th>
+                  <th>notional</th>
+                  <th>fee</th>
+                  <th>post cash (USD)</th>
+                  <th>post UP</th>
+                  <th>post DOWN</th>
+                  <th>post MTM equity (USD)</th>
+                  <th>post MTM PnL (USD)</th>
+                  <th>mark UP</th>
+                  <th>mark DOWN</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="/campaign.js"></script>
+  </body>
+</html>
+
