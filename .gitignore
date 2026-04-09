@@ -1,3 +1,5 @@
 # Local campaign data (CSVs, meta, discovery, backtests, campaign-assets)
 backend/data/
 data/
+node_modules/
+backend/node_modules/

@@ -9,6 +9,7 @@ import { BtcPriceClient } from "../prices/btc.js";
 import { buildCampaignRowsFromSources, makeCampaignMeta, type CampaignSources } from "../sim/buildCampaign.js";
 import { btcMomentumBot } from "../sim/bots/btcMomentum.js";
 import { exampleSituationBot } from "../sim/bots/exampleSituation.js";
+import { ladder053Bot } from "../sim/bots/ladder053.js";
 import type { TradingBot } from "../sim/bot.js";
 import { simulate } from "../sim/simulate.js";
 import { ensureDir, writeCampaign } from "../storage/campaignCsv.js";
@@ -78,6 +79,7 @@ function parseRangeArgToMs(input: string): number {
 const Bots: Record<string, TradingBot> = {
   "btc-momentum-v1": btcMomentumBot,
   "example-situation-v1": exampleSituationBot,
+  "ladder-053-v1": ladder053Bot,
 };
 
 type CampaignBacktestSummary = {

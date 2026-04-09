@@ -15,10 +15,12 @@ import { listCampaigns, readCampaign, writeCampaign } from "../storage/campaignC
 import { simulate } from "../sim/simulate.js";
 import { btcMomentumBot } from "../sim/bots/btcMomentum.js";
 import { exampleSituationBot } from "../sim/bots/exampleSituation.js";
+import { ladder053Bot } from "../sim/bots/ladder053.js";
 
 const Bots = {
   "btc-momentum-v1": btcMomentumBot,
   "example-situation-v1": exampleSituationBot,
+  "ladder-053-v1": ladder053Bot,
 } as const;
 
 export function buildRouter(config: AppConfig) {

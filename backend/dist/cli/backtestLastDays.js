@@ -9,6 +9,7 @@ import { BtcPriceClient } from "../prices/btc.js";
 import { buildCampaignRowsFromSources, makeCampaignMeta } from "../sim/buildCampaign.js";
 import { btcMomentumBot } from "../sim/bots/btcMomentum.js";
 import { exampleSituationBot } from "../sim/bots/exampleSituation.js";
+import { ladder053Bot } from "../sim/bots/ladder053.js";
 import { simulate } from "../sim/simulate.js";
 import { ensureDir, writeCampaign } from "../storage/campaignCsv.js";
 function arg(name) {
@@ -80,6 +81,7 @@ function parseRangeArgToMs(input) {
 const Bots = {
     "btc-momentum-v1": btcMomentumBot,
     "example-situation-v1": exampleSituationBot,
+    "ladder-053-v1": ladder053Bot,
 };
 async function main() {
     const config = loadConfig();
