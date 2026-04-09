@@ -1,0 +1,23 @@
+{
+  "name": "new_simulation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm --prefix backend run dev",
+    "backend:dev": "npm --prefix backend run server:dev",
+    "backend:start": "npm --prefix backend run server:start",
+    "fetch:last": "npm --prefix backend run fetch:last",
+    "backtest:last": "npm --prefix backend run backtest:last",
+    "collect:live": "npm --prefix backend run collect:live",
+    "download:range": "npm --prefix backend run download:range",
+    "ops": "npm --prefix backend run ops --"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

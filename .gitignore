@@ -1,0 +1,3 @@
+# Local campaign data (CSVs, meta, discovery, backtests, campaign-assets)
+backend/data/
+data/
